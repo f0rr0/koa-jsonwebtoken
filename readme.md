@@ -30,9 +30,9 @@ The token extraction strategy needs to be specified explicitly by setting `opts.
 ```js
 /**
  * Your custom token resolver
- * @param  {object}       the ctx object passed to the middleware
- * @param  {object}       the middleware's options
- * @return {String|null}  the resolved token or null if not found
+ * @param  {object}       ctx object passed to the middleware
+ * @param  {object}       middleware's options
+ * @return {String|null}  resolved token or null if not found
  */
 ```
 
@@ -47,9 +47,9 @@ In case you maintain a blacklist for the purpose of token revokation, you can sp
 ```js
 /**
  * Your custom token resolver
- * @param  {object}       the decoded token
- * @param  {object}       the middleware's options
- * @return {boolean}      boolean based on the token's status
+ * @param  {object}       decoded token
+ * @param  {object}       middleware's options
+ * @return {Promise}      Promise resolves with boolean
  */
 ```
 
