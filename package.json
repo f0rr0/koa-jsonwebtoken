@@ -24,7 +24,7 @@
     "clean": "rm -rf ./build",
     "build:prod": "npm run clean && `npm bin`/webpack --env.prod --optimize-dedupe",
     "watch": "npm run clean && `npm bin`/webpack --env.dev --watch --verbose --hot",
-    "postinstall": "npm run build:prod",
+    "prepublish": "npm run build:prod",
     "test": "node test-server.js"
   },
   "main": "./build/index.js",
