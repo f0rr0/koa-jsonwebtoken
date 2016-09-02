@@ -57,7 +57,7 @@ In case you maintain a blacklist for the purpose of token revokation, you can sp
 
 ```js
 import koa from 'koa';
-import jwt, { fromAuthorizationHeader } from 'koa-jsonwebtoken');
+import jwt, { fromAuthorizationHeader } from 'koa-jsonwebtoken';
 const app = koa();
 
 // Custom 401 handling if you don't want to expose koa-jsonwebtoken errors to users
@@ -100,7 +100,7 @@ Alternatively you can conditionally run the `jwt` middleware under certain condi
 
 ```js
 import koa from 'koa';
-import jwt, { fromAuthorizationHeader } from 'koa-jsonwebtoken');
+import jwt, { fromAuthorizationHeader } from 'koa-jsonwebtoken';
 const app = koa();
 
 // Middleware below this line is only reached if JWT token is valid
