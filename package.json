@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "clean": "rm -rf ./build",
-    "build:prod": "npm run clean && `npm bin`/webpack --env.prod --optimize-dedupe",
+    "build:prod": "npm run clean && `npm bin`/webpack -p --env.prod --optimize-dedupe",
     "watch": "npm run clean && `npm bin`/webpack --env.dev --watch --verbose --hot",
     "prepublish": "npm run build:prod",
     "test": "node test-server.js"
@@ -40,7 +40,8 @@
     "babel-plugin-transform-async-to-generator": "^6.8.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
     "koa": "^2.0.0-alpha.6",
-    "webpack": "^2.1.0-beta.14"
+    "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony",
+    "webpack": "^2.1.0-beta.21"
   },
   "dependencies": {
     "es6-promisify": "^4.1.0",
