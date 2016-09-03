@@ -49,7 +49,7 @@ export default (opts = {}) => {
         try {
           const refreshToken = fromCookies(ctx, opts, true);
           const accessToken = extractToken(ctx, opts);
-          const decodedAccessToken = decode(accessToken);
+          const decodedAccessToken = verifyAsync(accessToken, secret, { ignoreExpiration: true });
           await doRefresh(ctx, opts, refreshToken, decodedAccessToken);
           await next();
         } catch (e) {
