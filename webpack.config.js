@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const { dependencies } = require('./package.json');
+const BabiliPlugin = require("babili-webpack-plugin");
 
 const nodeModules = {};
 
@@ -33,5 +34,8 @@ module.exports = (env) => ({
        }
      ]
     },
+    // plugins: [
+    //   new BabiliPlugin()
+    // ],
     externals: nodeModules
 });
