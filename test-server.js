@@ -2,15 +2,13 @@
 const Koa = require('koa');
 const koajwt = require('./build/index.js').default;
 const fromAuthorizationHeader = require('./build/index.js').fromAuthorizationHeader;
-const jwt = require('jsonwebtoken');
-
-console.log(koajwt);
+const sign = require('./build/index.js').sign;
 
 const profile = {
   id: 123
 };
 
-const TOKEN = jwt.sign(profile, 'secret', { expiresIn: 60*5 });
+const TOKEN = sign(profile, 'secret', { expiresIn: 1 });
 
 console.log('Starting koa-jwt test server on http://localhost:3000/');
 console.log('');
@@ -24,16 +22,16 @@ console.log('')
 var app = new Koa();
 
 // Custom 401 handling
-app.use(function(ctx, next){
-  return next().catch((err) => {
-    if (401 == err.status) {
-      ctx.status = 401;
-      ctx.body = '401 Unauthorized - Protected resource, use Authorization header to get access\n';
-    } else {
-      throw err;
-    }
-  });
-});
+// app.use(function(ctx, next){
+//   return next().catch((err) => {
+//     if (401 == err.status) {
+//       ctx.status = 401;
+//       ctx.body = '401 Unauthorized - Protected resource, use Authorization header to get access\n';
+//     } else {
+//       throw err;
+//     }
+//   });
+// });
 
 // Unprotected middleware
 app.use(function(ctx, next){
