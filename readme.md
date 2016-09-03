@@ -58,6 +58,8 @@ In case you maintain a blacklist for the purpose of token revokation, you can sp
 ```js
 import koa from 'koa';
 import jwt, { fromAuthorizationHeader } from 'koa-jsonwebtoken';
+// const jwt = require('koa-jsonwebtoken').default;
+// const fromAuthorizationHeader = require('koa-jsonwebtoken').fromAuthorizationHeader;
 const app = koa();
 
 // Custom 401 handling if you don't want to expose koa-jsonwebtoken errors to users
