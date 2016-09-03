@@ -25,7 +25,7 @@
     "build": "npm run clean && `npm bin`/webpack --env.prod --optimize-dedupe",
     "compress": "$(npm bin)/uglifyjs ./build/index.js -o ./build/index.js --source-map ./build/index.js.map --source-map-root ./main.js --in-source-map ./build/index.js.map --screw-ie8 -c -m",
     "watch": "npm run clean && `npm bin`/webpack --env.dev --watch --verbose --hot",
-    "prepublish": "npm run build:prod",
+    "prepublish": "npm run build",
     "test": "node test-server.js"
   },
   "main": "./build/index.js",
