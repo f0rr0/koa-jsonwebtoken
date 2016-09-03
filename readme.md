@@ -1,29 +1,12 @@
 # koa-jsonwebtoken
 
-Koa middleware that validates JSON Web Tokens and sets `ctx.state.user`
-(by default) if a valid token is provided.
-
-This module lets you authenticate HTTP requests using JSON Web Tokens
-in your [Koa](http://koajs.com/) (node.js) applications. You can also:
-- Check for revoked tokens with custom logic
-- Refresh tokens with custom logic
-
-See [this article](http://blog.auth0.com/2014/01/07/angularjs-authentication-with-cookies-vs-token/)
-for a good introduction.
+Koa middleware to validate/revoke/refresh JSON Web Tokens. Sets `ctx.state.user`(default) to token payload.
 
 ## Install
 
 ```
 $ npm install koa-jsonwebtoken
 ```
-
-## Usage
-
-The JWT authentication middleware authenticates callers using a JWT
-token. If the token is valid, `ctx.state.user` (by default) will be set
-with the JSON object decoded to be used by later middleware for
-authorization and access control.
-
 
 ### Retrieving the token
 
@@ -48,16 +31,16 @@ In case you maintain a blacklist for the purpose of token revokation, you can sp
 
 ```js
 /**
- * Your custom token resolver
+ * Your custom token revocation check function
  * @param  {object}       decoded token
  * @param  {object}       middleware's options
- * @return {Promise}      Promise resolves or rejects with {message: "reason"}
+ * @return {Promise}      Promise resolves with anything or rejects with {message: "reason"}
  */
 ```
 
 ### Refresh token
 
-To refresh your tokens in case they are expired and do so in a manner transparent to the user, you can set `opts.refreshCookie` to the name of the cookie where the server will expect the refresh token. You also need to specify `opts.doRefresh` with a custom function which will carry out the refresh logic/save the new access token/validate the refresh token. The function should match the following interface:
+To refresh your tokens in case they are expired and do so in a manner transparent to the user, you can set `opts.refreshCookie` to the name of the cookie where the server will expect the refresh token. You also need to specify `opts.doRefresh` with a custom function which will carry out the refresh logic/validate the refresh token. The function should match the following interface:
 
 ```js
 /**
@@ -66,9 +49,10 @@ To refresh your tokens in case they are expired and do so in a manner transparen
  * @param  {object}       middleware's options
  * @param  {string}       refresh token from the specified cookie
  * @param  {object}       decoded access token
- * @return {Promise}      Promise resolves or rejects with {message: "reason"}
+ * @return {Promise}      Promise resolves with anything or rejects with {message: "reason"}
  */
 ```
+Note: `ctx.state[opts.key]` is set to the stale payload after your custom function returns. Don't modify critical payload fields if you depend on them in your application.
 
 ## Example
 
