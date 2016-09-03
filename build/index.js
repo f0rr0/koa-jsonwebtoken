@@ -2,4 +2,4 @@ module.exports=function(e){function r(o){if(t[o])return t[o].exports;var n=t[o]=
 `)}),r.fromAuthorizationHeader=((e,r)=>{if(!e.header||!e.header.authorization)throw new Error(`can't find authorization header`);const t=e.header.authorization.split(" ");if(2===t.length){const e=t[0],r=t[1];if(/^Bearer$/i.test(e))return r;throw new Error(`Bad Authorization header format. Format is "Authorization: Bearer token"
 `)}throw new Error(`Bad Authorization header format. Format is "Authorization: Bearer token"
 `)})}]);
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=./build/index.js.map

@@ -12,7 +12,7 @@ Object
 module.exports = (env) => ({
     context: resolve(__dirname),
     entry: {
-     index: env.prod ? './main.js' : ['webpack/hot/poll?1000', './index.js']
+     index: env.prod ? './main.js' : ['webpack/hot/poll?1000', './main.js']
     },
     target: 'node',
     output: {
