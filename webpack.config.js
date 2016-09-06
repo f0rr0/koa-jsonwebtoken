@@ -9,7 +9,7 @@ Object
      nodeModules[mod] = `commonjs ${mod}`;
     });
 
-module.exports = (env) => ({
+module.exports = (env = { dev: true }) => ({
     context: resolve(__dirname),
     entry: {
      index: env.prod ? './main.js' : ['webpack/hot/poll?1000', './main.js']

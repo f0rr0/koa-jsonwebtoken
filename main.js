@@ -51,7 +51,7 @@ export default (opts = {}) => {
         try {
           const refreshToken = fromCookies(ctx, opts, true);
           const accessToken = extractToken(ctx, opts);
-          const decodedAccessToken = verifyAsync(accessToken, secret, { ignoreExpiration: true });
+          const decodedAccessToken = await verifyAsync(accessToken, secret, { ignoreExpiration: true });
           await doRefresh(ctx, opts, refreshToken, decodedAccessToken);
           ctx.state = ctx.state || {};
           ctx.state[key] = decodedAccessToken;
