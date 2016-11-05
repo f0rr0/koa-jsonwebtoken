@@ -55,10 +55,11 @@ export default (opts = {}) => {
           await doRefresh(ctx, opts, refreshToken, decodedAccessToken);
           ctx.state = ctx.state || {};
           ctx.state[key] = decodedAccessToken;
-          await next();
+
         } catch (e) {
           ctx.throw(401, `Invalid token - ${e.message}`);
         }
+        await next();
       } else ctx.throw(401, `Invalid token - ${e.message}`);
     }
     await next();
