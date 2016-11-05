@@ -27,7 +27,6 @@ export default (opts = {}) => {
     throw new Error("token refresh strategy must be specified and should be a function");
   }
 
-
   const {
     secret,
     key = "user",
@@ -36,7 +35,7 @@ export default (opts = {}) => {
     doRefresh = false
   } = opts;
 
-  const middleware =  async (ctx, next) => {
+  const middleware = async (ctx, next) => {
     try {
       const accessToken = extractToken(ctx, opts);
       const decodedToken = await verifyAsync(accessToken, secret, opts);
