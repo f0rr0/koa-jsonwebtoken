@@ -44,7 +44,6 @@ export default (opts = {}) => {
       }
       ctx.state = ctx.state || {};
       ctx.state[key] = decodedToken;
-      await next();
     } catch (e) {
       if (e.message === "jwt expired" && doRefresh) {
         try {
@@ -54,12 +53,13 @@ export default (opts = {}) => {
           await doRefresh(ctx, opts, refreshToken, decodedAccessToken);
           ctx.state = ctx.state || {};
           ctx.state[key] = decodedAccessToken;
-          await next();
         } catch (e) {
           ctx.throw(401, `Invalid token - ${e.message}`);
         }
+        await next();
       } else ctx.throw(401, `Invalid token - ${e.message}`);
     }
+    await next();
   }
 
   middleware.unless = unless;
