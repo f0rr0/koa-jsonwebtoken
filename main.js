@@ -45,7 +45,7 @@ export default (opts = {}) => {
       }
       ctx.state = ctx.state || {};
       ctx.state[key] = decodedToken;
-      await next();
+
     } catch (e) {
       if (e.message === "jwt expired" && doRefresh) {
         try {
@@ -61,6 +61,7 @@ export default (opts = {}) => {
         }
       } else ctx.throw(401, `Invalid token - ${e.message}`);
     }
+    await next();
   }
 
   middleware.unless = unless;
