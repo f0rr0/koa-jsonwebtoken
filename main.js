@@ -7,8 +7,6 @@ const verifyAsync = promisify(verify, jwt);
 
 export { verify, decode, sign };
 
-export const __esModule = true;
-
 export default (opts = {}) => {
 
   if (!opts.secret) {
