@@ -150,7 +150,7 @@ babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-core@^6.10.4, babel-core@^6.23.0:
+babel-core@^6.23.0, babel-core@^6.23.1:
   version "6.23.1"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.23.1.tgz#c143cb621bb2f621710c220c5d579d15b8a442df"
   dependencies:
@@ -221,7 +221,7 @@ babel-helpers@^6.23.0:
     babel-runtime "^6.22.0"
     babel-template "^6.23.0"
 
-babel-loader@^6.2.4:
+babel-loader@^6.3.2:
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.3.2.tgz#18de4566385578c1b4f8ffe6cbc668f5e2a5ef03"
   dependencies:
@@ -240,7 +240,7 @@ babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
 
-babel-plugin-transform-async-to-generator@^6.8.0:
+babel-plugin-transform-async-to-generator@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.22.0.tgz#194b6938ec195ad36efc4c33a971acf00d8cd35e"
   dependencies:
@@ -753,15 +753,15 @@ error-inject@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/error-inject/-/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
 
-es6-promise@^3.2.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
+es6-promise@^4.0.3:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
 
-es6-promisify@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-4.1.0.tgz#dbcc1a3e93fdb8e9e709744182b7d2080c03fdb3"
+es6-promisify@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-5.0.0.tgz#5109d62f3e56ea967c4b63505aef08291c8a5203"
   dependencies:
-    es6-promise "^3.2.1"
+    es6-promise "^4.0.3"
 
 escape-html@~1.0.1:
   version "1.0.3"
@@ -1262,7 +1262,7 @@ jsonpointer@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
 
-jsonwebtoken@^7.1.9:
+jsonwebtoken@^7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-7.3.0.tgz#85118d6a70e3fccdf14389f4e7a1c3f9c8a9fbba"
   dependencies:

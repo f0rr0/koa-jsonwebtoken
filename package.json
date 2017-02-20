@@ -36,17 +36,17 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
     "koa": "next",
     "rimraf": "^2.6.0",
     "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony",
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "es6-promisify": "^4.1.0",
-    "jsonwebtoken": "^7.1.9",
+    "es6-promisify": "^5.0.0",
+    "jsonwebtoken": "^7.3.0",
     "koa-unless": "^1.0.0"
   },
   "engines": {
