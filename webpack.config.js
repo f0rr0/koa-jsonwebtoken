@@ -18,7 +18,7 @@ module.exports = (env = { dev: true }) => ({
     output: {
      filename: '[name].js',
      path: resolve(__dirname, './build'),
-     pathInfo: !env.prod,
+     pathinfo: !env.prod,
      libraryTarget: 'commonjs2'
     },
     devtool: env.prod ? 'source-map' : 'eval',
