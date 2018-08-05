@@ -1,5 +1,7 @@
 # koa-jsonwebtoken
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/f0rr0/koa-jsonwebtoken.svg)](https://greenkeeper.io/)
+
 Koa middleware to validate/revoke/refresh JSON Web Tokens. Sets `ctx.state.user`(default) to token payload.
 
 ## Install
